@@ -12,6 +12,11 @@ app = FastAPI(title="Smartphone Price Prediction API")
 
 # CORS (needed for React frontend)
 
+    # CORS -:
+#     CORS = Cross-Origin Resource Sharing
+
+#      Browsers block requests between different ports/domains for security.
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  
@@ -39,7 +44,4 @@ def predict(data: SmartphoneInput):
     }
     
     
-    # CORS -:
-#     CORS = Cross-Origin Resource Sharing
 
-#      Browsers block requests between different ports/domains for security.
