@@ -7,7 +7,7 @@ from app.models import SmartphoneInput
 from app.model_loader import predict_price
 
 
-app = FastAPI(title="Smartphone Price Prediction API")
+app = FastAPI(title="Smartphone Price Prediction Model")
 
 
 # CORS (needed for React frontend)
@@ -34,7 +34,7 @@ def home():
 @app.post("/predict")
 def predict(data: SmartphoneInput):
 
-    user_input = data.dict()
+    user_input = data.model_dump()
 
     prediction = predict_price(user_input)
 
